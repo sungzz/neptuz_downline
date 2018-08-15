@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_form_downline" model="ir.ui.view">
+        <field name="name">View form downline</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="after">
+                <page string="Downline" name="downline" attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}">
+                    <notebook colspan="4">
+                        <page string="Invoice Lines">
+                            <field name="downline_line_ids" nolabel="1" widget="one2many_list" mode="tree,kanban">
+                                <tree string="Downline Lines" editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="partner_id"/>
+                                    <field name="invoice_id"/>
+                                    <field name="date_created"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </page>
+            </page>
+        </field>
+    </record>
+
+
+</odoo>
