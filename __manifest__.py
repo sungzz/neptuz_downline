@@ -14,5 +14,5 @@ Functional Downline Feature for easy to record Referal Customer
     'installable': True,
     'auto_install': False,
     'application': True,
-    'qweb': ['static/src/xml/*.xml'],
+    'qweb': ['static/src/xml/downline.xml'],
 }
