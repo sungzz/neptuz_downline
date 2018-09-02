@@ -2,7 +2,26 @@
 
 
 <templates xml:space="preserve">
-    <t t-name='custom_btn'>
-        <button>Cust Button</button>
+    <t t-extend='PaymentScreenWidget'>
+        <t t-jquery='.payment-buttons' t-operation='after'>
+            <div>
+                Select Referral : 
+                <input type='text'></input>
+            </div>
+        </t>
     </t>
+
+
+
+    <!-- <t t-extend='PaymentScreenWidget'>
+        <t t-jquery='.payment-buttons' t-operation='after'>
+            <div>
+                <t t-foreach="partner_id" t-as="partner">
+                    <div class="row">
+                        <span t-field="partner_id.name"/>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t> -->
 </templates>

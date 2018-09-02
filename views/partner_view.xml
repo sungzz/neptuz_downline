@@ -25,5 +25,20 @@
         </field>
     </record>
 
+    <record id="pos_order_form_downline" model="ir.ui.view">
+        <field name="name">pos.order.form.downline</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='order_fields']/field[@name='date_order']" position="after">
+                    <field name="downline_partner_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+
 
 </odoo>
